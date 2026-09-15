@@ -55,3 +55,15 @@ Ya viste los 4 repos. Ayúdame a entender cómo se relacionan entre sí:
 No adivines más allá de lo que muestra el código — si algo no está 
 claro, dime que no está claro en vez de asumir.
 """
+
+# ============================================
+# PREGUNTAS PARA EL EQUIPO — alcance del POC de afiliación
+# ============================================
+"""
+ Is this enrollment POC targeting first-time Medicare enrollees,
+   people switching between MA plans, or both?
+
+   If a member is switching from one Aetna plan to another, can we
+   pre-fill their providers and medications from our own internal
+   data instead of Blue Button?
+"""
