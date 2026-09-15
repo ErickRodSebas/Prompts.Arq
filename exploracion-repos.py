@@ -78,3 +78,29 @@ If any field isn't in my notes, leave it blank — do not invent information. Re
 My notes for today:
 [paste your notes here]
 """
+
+"""
+Modo discusión — no modifiques, crees ni escribas nada. Solo leer
+y conversar.
+
+Ya revisaste los repos del POC. Quiero que hablemos del workflow de
+afiliación antes de tocar código.
+
+Empieza por reconstruirme el flujo tal como está hoy: paso por paso,
+qué le pedimos al usuario en cada pantalla, qué es obligatorio y qué
+es opcional, y en qué momento se le saca de la página.
+
+Después dime, con base en el código:
+
+1. ¿En qué pasos le pedimos al usuario una decisión que todavía no
+   tiene información para tomar?
+2. ¿Qué se pierde si abandona a medio flujo y regresa?
+3. ¿Qué partes del flujo existen por una limitación técnica y cuáles
+   son solo herencia de cómo se construyó?
+4. Si tuvieras que quitar un paso completo sin perder funcionalidad,
+   ¿cuál quitarías y por qué?
+
+No me des todavía una propuesta de rediseño ni escribas código.
+Quiero entender primero el estado actual. Si algo no puedes
+verificar en el código, dilo en vez de asumirlo.
+"""
