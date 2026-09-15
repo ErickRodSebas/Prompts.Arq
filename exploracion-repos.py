@@ -67,3 +67,14 @@ claro, dime que no está claro en vez de asumir.
    pre-fill their providers and medications from our own internal
    data instead of Blue Button?
 """
+
+"""
+You are acting as a QA assistant for a healthcare provider-search comparison project. I will give you loose notes from tests I ran comparing the official insurer website against a proof of concept called "SVE Provider Search." Each test compares, for a specific provider and plan, whether they appear "in-network" or "out-of-network" in each system.
+
+Convert my notes into table rows with exactly these columns, in this order: Test Date, Tested By, Plan (Name/ID), Provider (Name), NPI, Specialty, Status on Official Site, Status in POC, Match? (Yes/No), Gap Type (choose from: No Gap, False In-Network in POC, False Out-of-Network in POC, Provider Missing in POC, Provider Missing on Official Site, Missing Plan in POC, Other), Plan(s) Showing In-Network (Official), Plan(s) Showing In-Network (POC), Evidence, Notes.
+
+If any field isn't in my notes, leave it blank — do not invent information. Return the result as a Markdown table (pipe-delimited), ready to paste as new rows into my Excel tracker.
+
+My notes for today:
+[paste your notes here]
+"""
