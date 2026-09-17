@@ -212,5 +212,20 @@ Plans) code looks like it's mid-change or inconsistent, stop and tell me
 instead of guessing intent. When wiring the new tab into App.tsx, make the
 smallest possible insertion (add to the tabs array/list and routing) —
 don't reformat, refactor, or reorder anything else in that file.
+
+Before making any changes, investigate and report back (don't implement
+yet):
+
+1. Find the removed <nav> block in this session's commit history and show
+   me the exact original code for the contract/PBP badge — what component
+   it used, what data/props it read, and under what condition it rendered
+   (always visible, or conditional on something).
+
+2. Look at the current StepIndicator step-button markup/styling and tell
+   me whether there's reasonable room to render that badge inline without
+   breaking the step indicator's layout, or if it would need a design
+   adjustment (e.g. smaller badge, different position).
+
+Once you report these findings, I'll tell you how to proceed. do it in a consise way.
 """
 
