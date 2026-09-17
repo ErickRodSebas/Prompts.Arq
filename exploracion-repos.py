@@ -252,5 +252,10 @@ Scope:
 - Show me the diff before committing. Run npm run build to confirm nothing
   breaks, then commit with a clear message and push on its own, following
   our usual small-commit pattern.
+
+  After implementing and verifying the badge fix (build clean, diff shown),
+do NOT push yet. Instead, give me a short summary (3-4 lines max, plain
+language, no code) describing exactly what changed, that I can paste into
+our team chat to ask for a quick go-ahead before I push.
 """
 
