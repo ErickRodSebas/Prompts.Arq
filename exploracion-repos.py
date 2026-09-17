@@ -227,5 +227,30 @@ yet):
    adjustment (e.g. smaller badge, different position).
 
 Once you report these findings, I'll tell you how to proceed. do it in a consise way.
+
+Based on your investigation: restore the contract/PBP badge as a compact
+pill element in the StepIndicator, following your own "smallest viable
+option" recommendation.
+
+Implementation:
+- Add a small pill/badge (reuse the old .tabHint visual style — small,
+  monospace, reduced font-size/padding — as you suggested) positioned
+  below the label, only on the "Select Your Drugs" / Drug Coverage step.
+- Content: {selectedPlan.contract}-{selectedPlan.pbp}, exactly as before.
+- Condition: only render when selectedPlan is truthy (same as the original
+  logic) — hidden until a plan is picked, shown after.
+- Read selectedPlan from the same state in App.tsx (set by
+  handlePlanSelect) — pass it down to StepIndicator as a prop if it isn't
+  already available there.
+- Make sure it doesn't push the 4-step layout wider or cause wrapping on
+  narrow screens, per the constraint you already flagged.
+
+Scope:
+- Only touch what's needed to add this one badge to this one step. Don't
+  change anything else in StepIndicator, App.tsx navigation, or the other
+  three tabs.
+- Show me the diff before committing. Run npm run build to confirm nothing
+  breaks, then commit with a clear message and push on its own, following
+  our usual small-commit pattern.
 """
 
