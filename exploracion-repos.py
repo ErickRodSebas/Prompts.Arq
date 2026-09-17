@@ -169,5 +169,11 @@ Please:
 6. If there's a merge conflict, STOP and show me exactly which files and
    lines conflict — do not resolve it automatically without me reviewing it
    first.
+
+   Update the step indicator's step-1 label to "Select Your Provider" to match
+Purab's rename — keep it in sync with whatever the tab button actually
+says, since showing two different names for the same step would confuse
+users. Commit this separately with a clear message (e.g. "fix: sync step
+indicator label with Tab 1 rename").
 """
 
