@@ -103,4 +103,53 @@ Después dime, con base en el código:
 No me des todavía una propuesta de rediseño ni escribas código.
 Quiero entender primero el estado actual. Si algo no puedes
 verificar en el código, dilo en vez de asumirlo.
+
+Context:
+This is a "Plan Recommendation" POC with a multi-step wizard (tabs 1 through 4).
+The component runs embedded inside a Salesforce Experience Cloud site.
+I'm working on ticket #7: "Step indicator + UX copy pass", on the
+iteration-playground-collab branch.
+
+My teammates are actively working in parallel on:
+- Item 1: renaming Tab 1 to "Select Your Provider" + lazy-load logic
+- Item 2: ZIP search logic
+- Item 3: redesigning Tab 2 as "Your Medications" (drug list)
+
+Task 1 — Step Indicator (wizard progress bar):
+- Add a visual progress indicator showing steps 1→2→3→4, highlighting the
+  current step (e.g. "Step 1 of 4").
+- It must update dynamically as the user moves forward/backward between
+  steps.
+- Follow the existing design system/styling already used in the project.
+- Add clear accessibility labels (aria-label) for each step in the
+  indicator itself.
+
+Task 2 — UX Copy Pass (SCOPE LIMITED):
+- Do NOT rename or touch the headings/labels for Tab 1, Tab 2, or Tab 3 —
+  those are already being renamed by teammates in items 1-3. Leave their
+  copy exactly as-is, even if it looks unfinished or inconsistent right now.
+- Only review and improve the heading/label for Tab 4 ("Recommended Plans"),
+  since no one else is currently working on it.
+- Update accessibility attributes (alt/aria-label) only for the step
+  indicator and Tab 4 — not for Tabs 1-3.
+
+Task 3 — "Simulate" button:
+- Verify the "Simulate" button displays and works correctly when the
+  component is embedded inside Experience Cloud. If something in Experience
+  Cloud's wrapper/CSS/context is hiding or breaking it, flag it before
+  applying any fix.
+
+Constraints:
+- Do not modify business logic, data handling, or navigation flow for any
+  tab.
+- Do not refactor or restructure Tab 1, Tab 2, or Tab 3 components at all —
+  treat their files as read-only unless the step indicator needs to hook
+  into their navigation state (in which case, make the smallest possible
+  change and point it out to me explicitly).
+- Make small, frequent commits (one per logical change) so I can push often
+  and avoid merge conflicts with the team.
+
+Before writing any code, show me which files you plan to touch and a short
+summary of the plan.
 """
+
