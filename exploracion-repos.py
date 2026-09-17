@@ -175,5 +175,42 @@ Purab's rename — keep it in sync with whatever the tab button actually
 says, since showing two different names for the same step would confuse
 users. Commit this separately with a clear message (e.g. "fix: sync step
 indicator label with Tab 1 rename").
+
+Context:
+This is the same "Plan Recommendation" POC wizard I just added a step
+indicator to (item 7, already merged and pushed). Current tabs are:
+1. "Select Your Provider" (Provider Search)
+2. "Drug Coverage"
+3. "Recommended Plans" (formerly "Plans")
+
+Now I'm picking up item 4: adding a new pharmacy step as a new tab, before
+the "Recommended Plans" tab.
+
+Task — Add pharmacy step (new tab — "Your Pharmacy"):
+- Add a new tab called "Your Pharmacy" positioned after the drug coverage
+  tab and before the "Recommended Plans" tab.
+- Simple ZIP-based pharmacy search (single ZIP input, no radius/adjacent
+  ZIP logic — out of scope for this POC).
+- Selecting a pharmacy can be mocked/simulated — no real pharmacy API
+  integration needed.
+- Make sure the step indicator picks up this new tab automatically (it was
+  built to read tab count/labels dynamically — verify this instead of
+  hardcoding).
+
+Constraints:
+- Follow the same design system/styling as the other tabs.
+- Do not modify the other three tabs' logic — only add the new pharmacy tab
+  and wire it into the wizard's navigation.
+- Small, frequent commits, pushed as we finish each verified piece.
+
+Before writing code, show me which files you'll touch and confirm the step
+indicator update happens automatically.
+Additional constraint:
+Before making changes, run git pull to make sure you're working against the
+latest version of App.tsx. If Tab 2 (Drug Coverage) or Tab 3 (Recommended
+Plans) code looks like it's mid-change or inconsistent, stop and tell me
+instead of guessing intent. When wiring the new tab into App.tsx, make the
+smallest possible insertion (add to the tabs array/list and routing) —
+don't reformat, refactor, or reorder anything else in that file.
 """
 
