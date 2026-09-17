@@ -151,5 +151,23 @@ Constraints:
 
 Before writing any code, show me which files you plan to touch and a short
 summary of the plan.
+
+I have an uncommitted change to react-app/package-lock.json and an
+untracked package-lock.json at the repo root. Neither is related to my
+ticket #7 work (step indicator + copy pass) — they likely appeared from an
+npm install run during your own verification steps.
+
+Please:
+1. Discard/restore the modified react-app/package-lock.json (revert it to
+   its committed state).
+2. Delete the untracked package-lock.json at the repo root.
+3. Run git status to confirm the working tree is clean and confirm the 2
+   commits from this session are still intact and ready to push.
+4. Run git pull to bring in any changes from teammates.
+5. If the pull is clean (no conflicts), run git push to publish my 2
+   commits to origin/iteration-playground-collab.
+6. If there's a merge conflict, STOP and show me exactly which files and
+   lines conflict — do not resolve it automatically without me reviewing it
+   first.
 """
 
