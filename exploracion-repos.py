@@ -257,5 +257,48 @@ Scope:
 do NOT push yet. Instead, give me a short summary (3-4 lines max, plain
 language, no code) describing exactly what changed, that I can paste into
 our team chat to ask for a quick go-ahead before I push.
+
+Context: The StepIndicator is now the sole navigation for the wizard (old
+tab bar removed)
+Task: Add a similar small summary next to/under each step's label once
+that step has been completed, showing what the user picked there:
+
+1. "Select Your Provider" step → two-line summary: provider name on top,
+   ZIP code below it. Keep it visually symmetric/balanced and no wider or
+   taller than necessary.
+
+2. "Select Your Drugs" step → I don't have a strong opinion on the best
+   format here. Before implementing this one, propose 2-3 options for how
+   to summarize the selected drugs (a count like "3 drugs selected" is a
+   fine baseline, but suggest alternatives too if you think something else
+   reads better given the available space and the data you have access
+   to). I'll pick one before you build it.
+
+3. "Your Pharmacy" step → name of the selected pharmacy.
+
+4. "Recommended Plans" step → name of the selected plan.
+
+Design constraints:
+- Reuse the same visual style/pattern as the existing contract/PBP badge
+  (small pill, same font size/spacing) for consistency — don't invent a new
+  visual style.
+- Keep it compact: this must not make the step indicator noticeably
+  taller or wider, and must not cause wrapping or overflow at narrow
+  screen widths (same constraint that applied to the existing badge).
+- Only show each summary once that step has actual data to show (e.g.
+  nothing shown until a provider/drug/pharmacy/plan is actually selected)
+  — same "hidden until available" pattern as the existing badge.
+
+Scope:
+- Only touch StepIndicator and the minimal wiring needed in App.tsx to pass
+  each step's summary data down as props — do not modify the underlying
+  logic, state, or components of any of the four steps themselves.
+
+Before implementing: investigate and report back first — confirm where
+each piece of data (provider name, ZIP, selected drug info, pharmacy name,
+plan name) currently lives in state, whether it's already accessible from
+App.tsx, whether there's enough visual room for four small summaries
+without breaking the layout, and give me your drug-summary format options
+for step 2. I'll confirm everything before you write any code.
 """
 
