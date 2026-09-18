@@ -323,5 +323,25 @@ Confirming your questions:
 
 For the drug-summary format (step 2), I still need to pick — see my
 separate message with the options.
+
+Context: Same "Plan Recommendation" POC wizard. Step 1 ("Select Your
+Provider") has a ZIP code field used for provider search. Step 3 ("Your
+Pharmacy") has its own separate ZIP code field for pharmacy search.
+
+Task: Pre-fill the pharmacy search's ZIP field with the ZIP code the user
+already entered in step 1, so they don't have to type it again. The user
+should still be able to see it pre-filled and change it if they want (it's
+a default/starting value, not locked/read-only).
+
+Constraints:
+- Only wire the ZIP value from step 1 into step 3's initial field value.
+  Do not change how either step's ZIP search logic works, validate, or
+  submit.
+- Do not touch the other steps (drug selection, recommended plans) at all.
+- Investigate first and report back: confirm where the step 1 ZIP is
+  currently stored/accessible (same localStorage/App.tsx pattern as the
+  other cross-step data you've read before), and whether PharmacySearch.tsx
+  can accept an initial ZIP value as a prop without needing changes to its
+  internal validation/search logic. Don't write code until I confirm.
 """
 
