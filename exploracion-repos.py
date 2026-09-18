@@ -343,5 +343,38 @@ Constraints:
   other cross-step data you've read before), and whether PharmacySearch.tsx
   can accept an initial ZIP value as a prop without needing changes to its
   internal validation/search logic. Don't write code until I confirm.
+
+
+  Context: Same "Plan Recommendation" POC wizard. The step summary
+pills (drug count, pharmacy name, plan name) read from localStorage, as we
+set up in the previous task.
+
+Bug: After closing/reloading the page and starting fresh (0 drugs actually
+selected, no pharmacy chosen), the summary pills still show stale data
+from a previous session (e.g. "4 drugs" showing even though the current
+session has 0 selected, or a previously-chosen pharmacy/plan still showing
+as selected).
+
+This means the actual step components' in-memory state resets on reload,
+but localStorage isn't being cleared/synced to match — so the summary
+pills go out of sync with what's actually selected right now.
+
+Task: Investigate first, don't write code yet:
+1. Confirm exactly why this happens — does DrugSelection.tsx/
+   PharmacySearch.tsx reset their in-memory state on reload without
+   clearing their corresponding localStorage keys? Or is there some other
+   mismatch?
+2. Tell me what the correct fix looks like, and whether it should live in
+   the step components themselves (clearing/syncing localStorage on fresh
+   mount) or somewhere else — and whether fixing this touches the "don't
+   modify the four step components" constraint from before. If it does,
+   flag it clearly before proceeding, since that's a constraint I set
+   deliberately.
+3. Confirm this fix won't affect the actual intended behavior of anything
+   already working (e.g. if persistence across tab switches within the
+   same session is intentional and should still work, only the
+   fresh-reload case should be fixed).
+
+Report back before implementing anything.
 """
 
