@@ -300,5 +300,28 @@ plan name) currently lives in state, whether it's already accessible from
 App.tsx, whether there's enough visual room for four small summaries
 without breaking the layout, and give me your drug-summary format options
 for step 2. I'll confirm everything before you write any code.
+
+Confirming your questions:
+
+1. Go with Option B (read localStorage directly from App.tsx) — respects
+   the "don't touch the four step components" constraint. The staleness
+   trade-off is acceptable for this POC.
+
+2. Yes, one pill with two stacked lines (provider name on top, ZIP below)
+   for step 1 — that's exactly what I wanted.
+
+3. Retire the old contract/PBP pill under "Select Your Drugs" — it's
+   leftover from logic DrugSelection no longer uses. The new plan-name
+   summary under "Recommended Plans" covers that need in a better place.
+
+4. Use pure data-presence for the show/hide rule (matches the existing
+   badge pattern) — correct, since steps are freely clickable in any order.
+
+5. Before calling this done, verify visually with all four pills/summaries
+   visible at once (not just one at a time), at both narrow and wide
+   widths, to make sure nothing overflows or wraps badly.
+
+For the drug-summary format (step 2), I still need to pick — see my
+separate message with the options.
 """
 
